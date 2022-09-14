@@ -15,7 +15,7 @@ const caminoOptimo = (inicio, final, grafo, funcionOptimiza ) => {
             if(i===j){
                 fila[j]={ costoAOptimizar: (funcionOptimiza(grafo[i][j])), antecesor: i }
             }else{
-                fila[j]={ costoAOptimizar: (funcionOptimiza(grafo[i][j])) , antecesor: -1 }
+                fila[j]={ costoAOptimizar: (funcionOptimiza(grafo[i][j])) , antecesor: (funcionOptimiza(grafo[i][j])) != Infinity ? i : -1 } //si esta conectado a otro nodo directamente, se lo pongo, sino pongo -1 para marcar que no tiene antecesores directos
             }
 
         }
@@ -59,6 +59,11 @@ const caminoOptimo = (inicio, final, grafo, funcionOptimiza ) => {
     }
     
     camino.push(nodos[inicio]);
+    
+    //si no llegue a destino
+    if(matrizAntecesores[inicio][actual].antecesor !== inicio ){
+        return []
+    }
     return camino.reverse();
 }
 
