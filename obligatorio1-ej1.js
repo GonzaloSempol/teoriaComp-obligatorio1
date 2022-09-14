@@ -138,7 +138,7 @@ console.log('GA significa que el gato ayuna')
 console.log()
 
 const casosDePrueba = [
-                        // {distance : 3, array : ['R','G','R','R','G','R','R','G','R','R','G','G','R','G','R','R','G']},
+                        
                         {distance : 3, array : ['R','G','R','R','G','G']},
                         {distance : 3, array : ['R','R','R','G','G','G']},
                         {distance : 3, array : ['R','G']},
