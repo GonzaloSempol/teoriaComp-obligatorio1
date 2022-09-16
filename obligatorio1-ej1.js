@@ -48,7 +48,8 @@ const gatosFuerzaBruta = (n, arr) =>{
                 if(!comi){
                     const ayuno = [...arr];
                     ayuno[i] = 'GA'; //indico que l gato ayuna
-                    result.push(ayuno)
+                    const solAyuno =  gatosBruteAux(n,ayuno)
+                    result.push(...solAyuno)
                 }
                 
             }
